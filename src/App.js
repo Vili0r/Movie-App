@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import Navigation from "./components/Navigation/Navigation";
+import PopularMovies from "./components/PopularMovies/PopularMovies";
+import MovieDetails from "./pages/MovieDetails";
+import TvShows from "./pages/TvShows";
+import Actors from "./pages/Actors";
+import NowPlaying from "./components/NowPlaying/NowPlaying";
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-gray-900 text-white font-sans">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<PopularMovies />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/now_playing" element={<NowPlaying />} />
+        <Route path="/shows" element={<TvShows />} />
+        <Route path="/actors" element={<Actors />} />
+      </Routes>
     </div>
   );
 }
