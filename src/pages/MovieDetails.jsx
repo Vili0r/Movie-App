@@ -1,6 +1,6 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const API_URL = 'https://api.themoviedb.org/3/movie';
 const API_KEY = '8e7a762545a04735bfe96225f4a31a87';
@@ -115,11 +115,13 @@ const MovieDetails = () => {
                         {cast?.slice(0, 10).map((cast) => {
                             return (
                                 <div className="mt-8">
-                                    <a href="">
+                                    <Link to={`/person/${cast.id}`}>
                                         <img src={`https://image.tmdb.org/t/p/w300${cast.profile_path}`} alt={cast.name} className="hover:opacity-75 transition ease-in-out duration-150" />
-                                    </a>
+                                    </Link>
                                     <div className="mt-2">
-                                        <a href="" className="text-lg mt-2 hover:text-gray:300">{cast.name}</a>
+                                        <Link to={`/person/${cast.id}`} className="text-lg mt-2 hover:text-gray:300">
+                                            {cast.name}
+                                        </Link>
                                         <div className="text-sm text-gray-400">
                                             {cast.character}
                                         </div>

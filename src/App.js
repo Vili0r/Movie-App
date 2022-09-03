@@ -8,6 +8,7 @@ import TvShows from "./pages/TvShows";
 import Actors from "./pages/Actors";
 import NowPlaying from "./components/NowPlaying/NowPlaying";
 import TvShowDetails from "./pages/TvShowDetails";
+import ActorDetails from "./pages/ActorDetails";
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/shows" element={<TvShows />} />
         <Route path="/tv/:id" element={<TvShowDetails />} />
         <Route path="/actors" element={<Actors />} />
+        <Route path="/person/:id" element={<ActorDetails />} />
       </Routes>
     </div>
   );

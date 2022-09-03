@@ -126,7 +126,6 @@ const TvShowDetails = () => {
                 </div>
             </div> 
         </>
-        
     );
 }
 
